@@ -39,5 +39,9 @@ function shortenText (elem, len){
     const el_text = el.innerText;
     // 해당 돔요소에 innerText 프로퍼티에 대입되는 우항을 3항연산 처리 후 대입
     el.innerText =
-        el_text.length > len ? el_text.substring(0. len) + "...":el_text;
+        el_text.length > len ? el_text.substring(0, len) + "...":el_text;
 }
+
+// 전체 문자열에서 특정 문자값을 기준으로 분리해서 배열로 반환
+const sapn_text = document.querySelector("span").innerText;
+console.log(sapn_text);
