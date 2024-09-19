@@ -32,7 +32,7 @@ h3.innerText = h3_text.length > 30 ? h3_text.substring(0,30) + '...' : h3_text;
 // 함수패키징
 // shortenText('h3',30);
 
-function shortenText (el, len){
+function shortenText (elem, len){
     // 첫 번째 인수로 받은 문자값으로 DOM요소 선택
     const el = document.querySelector(elem);
     // 해당 요소의 문자값 변수에 할당
