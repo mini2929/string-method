@@ -43,5 +43,36 @@ function shortenText (elem, len){
 }
 
 // 전체 문자열에서 특정 문자값을 기준으로 분리해서 배열로 반환
-const sapn_text = document.querySelector("span").innerText;
-console.log(sapn_text);
+const span_text = document.querySelector("span").innerText;
+console.log(span_text); //'2024-09-19'
+
+const text_arr = span_text.split("-");
+console.log(text_arr); //['2024', '09', '19']
+
+// 배열값을 특정 문자열로 이어서 하나의 문자열로 반환하는 함수
+const new_text = text_arr.join(".");
+console.log(new_text); //'2024.09.19'
+
+// 위의 split과 join을 한번에 같이 map을 활용해서 연산 간소화하는 방법 한번에 연산처리!
+const h4_text = document.querySelector("h4").innerText;
+const new_h4 = h4_text.split(" ").join("/");
+console.log(new_h4);
+
+// mission = 위의 구문을 다음과 같은 형태의 함수로 패키징
+// changeText('h2',' ','/')
+
+function changeText(a,b,c) {
+    const element = document.querySelector(a);
+    const text2 = element.innerText;
+    /*
+    const new2 = text2.split(b).join(c);
+    element.innerText = new2; // HTML 요소의 텍스트를 변경
+    console.log(new2);
+    */
+    element.innerText = text2.split(b).join(c);
+}
+
+changeText('h5',' ',' - ');
+changeText('h4',' ','/');
+
+
